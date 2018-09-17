@@ -1,7 +1,9 @@
-FROM sonarqube:6.7
+ARG SONARQUBE_VERSION=6.7.5
+FROM sonarqube:${SONARQUBE_VERSION}
 
-MAINTAINER GPMM
+MAINTAINER ludovic.terral@lixtec.fr
 
+ENV SONARQUBE_VERSION=${SONARQUBE_VERSION:-6.7.5} 
 ENV SONARQUBE_JDBC_URL=jdbc:h2:tcp://localhost:9092/sonar
 
 COPY add/run.sh /bin/
