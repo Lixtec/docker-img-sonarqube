@@ -8,7 +8,7 @@ ENV SONARQUBE_JDBC_URL=jdbc:h2:tcp://localhost:9092/sonar
 
 USER root
 COPY add/run.sh /bin/
-RUN chmod +x /bin/*.sh
+RUN chmod +x /bin/run.sh
 
 ENTRYPOINT ["/bin/run.sh"]
 
