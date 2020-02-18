@@ -1,11 +1,11 @@
 ARG SONARQUBE_VERSION=6.7.5
 FROM sonarqube:${SONARQUBE_VERSION}
-
 MAINTAINER ludovic.terral@lixtec.fr
 
 ENV SONARQUBE_VERSION=${SONARQUBE_VERSION:-6.7.5} 
 ENV SONARQUBE_JDBC_URL=jdbc:h2:tcp://localhost:9092/sonar
 
+RUN echo "version à intégrer: ${SONARQUBE_VERSION}"
 USER root
 COPY add/run.sh /bin/
 RUN chmod +x /bin/run.sh
